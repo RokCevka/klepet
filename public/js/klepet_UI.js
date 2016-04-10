@@ -116,6 +116,12 @@ $(document).ready(function() {
       $('#seznam-uporabnikov').append(divElementEnostavniTekst(uporabniki[i]));
     }
 
+
+    
+    $('#seznam-uporabnikov div').click(function() {
+      document.getElementById('poslji-sporocilo').value="/zasebno \""  + $(this).text()+ "\""; 
+      $('#poslji-sporocilo').focus();
+    });
   });
 
   setInterval(function() {
