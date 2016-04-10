@@ -8,6 +8,8 @@ function divElementEnostavniTekst(sporocilo) {
   }
 }
 
+//nimam
+
 function divElementHtmlTekst(sporocilo) {
   return $('<div></div>').html('<i>' + sporocilo + '</i>');
 }
