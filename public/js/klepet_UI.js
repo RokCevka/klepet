@@ -16,6 +16,7 @@ function divElementHtmlTekst(sporocilo) {
 
 
 
+
 function procesirajVnosUporabnika(klepetApp, socket) {
   var sporocilo = $('#poslji-sporocilo').val();
   sporocilo = dodajSmeske(sporocilo);
@@ -33,6 +34,21 @@ function procesirajVnosUporabnika(klepetApp, socket) {
     img.appendTo('#sporocila');
   }
   
+
+  
+  var videoLink = sporocilo;
+  var videoID = sporocilo.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+  if(videoID != null) {
+     var iframe = $(document.createElement('iframe'))
+     iframe.attr('src', "https://www.youtube.com/embed/" + videoID[1]);
+     iframe.attr('height', "150");
+     iframe.attr('width', "200");
+     iframe.attr('allowfullscreen');
+     iframe.attr('style', "margin-left:20px");
+     iframe.appendTo('#sporocila');
+   }
+     console.log("video id = ",videoID[1]);
+
   if (sporocilo.charAt(0) == '/') {
     sistemskoSporocilo = klepetApp.procesirajUkaz(sporocilo);
     if (sistemskoSporocilo) {
