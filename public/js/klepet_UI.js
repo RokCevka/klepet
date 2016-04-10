@@ -34,7 +34,7 @@ function procesirajVnosUporabnika(klepetApp, socket) {
     img.appendTo('#sporocila');
   }
   
-
+//samdamerga
   
   var videoLink = sporocilo;
   var videoID = sporocilo.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
